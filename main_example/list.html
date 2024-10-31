@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="ru">
+<meta charset="UTF-8"> 
+<title>
+Список важнейших процессоров (ЛР2)
+</title>
+<body text="#000080">
+    <p>
+        <a href="main.html" target="_self">
+            Главная страница
+        </a>
+    </p>
+    <p>
+        <a href="list.html" target="_self">
+            Список процессоров
+        </a>
+    </p>
+    <hr>
+    <details>
+	<summary>График</summary>
+	<table border="0">
+	<tr align="center">
+	<td><b>Значение по оси OX</b></td>
+	<td><b>Результат</b></td>
+	</tr>
+	<tr>
+	<td>
+		<form>
+		<input type="radio" name="Xvalue" value="frequency">Разъём<br>
+		<input type="radio" name="Xvalue" value="country">Производитель<br>
+		<input type="radio" name="Xvalue" value="year">Год
+		</form>
+	</td>
+	<td>
+		<form>
+		<input type="checkbox" name="result" value="minfreq">Минимальная частота<br>
+		<input type="checkbox" name="result" value="maxfreq">Максимальная частота<br>
+		<input type="checkbox" name="result" value="mintp">Минимальный техпроцесс<br>
+		</form>
+	</td>
+	</tr>
+	</table>
+	<input type="button" value="Построить">
+	</details>
+    <details>
+	<summary>Фильтр</summary>
+	<p>
+	Производитель:<input type="text">
+	</p>
+	<p>
+	Архитектура:<input type="text">
+	</p>
+	<p>
+	Разъём:<input type="text">
+	</p>
+	<p>
+	Число ядер:<input type="number">
+	</p>
+	<p>
+	Год: от&nbsp;<input type="number">&nbsp;до&nbsp;<input type="number">
+	</p>
+	<p>
+	Техпроцесс: от&nbsp;<input type="number">&nbsp;до&nbsp;<input type="number">
+	</p>
+	<input type="button" value="Найти">
+	</details>
+	
+    <details>
+	<summary>Сортировка</summary>
+	<p>
+	Первый уровень:
+	<select name="first">
+		<option value="0"> Нет </option>
+		<option value="1"> Производитель </option>
+		<option value="2"> Продукт </option>
+		<option value="3"> Год </option>
+		<option value="4"> Архитектура </option>
+		<option value="5"> Количество ядер </option>
+		<option value="6"> Базовая частота </option>
+		<option value="7"> Разъём </option>
+		<option value="8"> Техпроцесс </option>
+	</select>
+	&nbsp;По убыванию?<input type="checkbox" name="sort" value="1">
+	</p>
+	<p>
+	Второй уровень:
+	<select name="second">
+		<option value="0"> Нет </option>
+		<option value="1"> Производитель </option>
+		<option value="2"> Продукт </option>
+		<option value="3"> Год </option>
+		<option value="4"> Архитектура </option>
+		<option value="5"> Количество ядер </option>
+		<option value="6"> Базовая частота </option>
+		<option value="7"> Разъём </option>
+		<option value="8"> Техпроцесс </option>
+	</select>
+	&nbsp;По убыванию?<input type="checkbox" name="sort" value="2">
+	</p>
+	<p>
+	Третий уровень:
+	<select name="third">
+		<option value="0"> Нет </option>
+		<option value="1"> Производитель </option>
+		<option value="2"> Продукт </option>
+		<option value="3"> Год </option>
+		<option value="4"> Архитектура </option>
+		<option value="5"> Количество ядер </option>
+		<option value="6"> Базовая частота </option>
+		<option value="7"> Разъём </option>
+		<option value="8"> Техпроцесс </option>
+	</select>
+	&nbsp;По убыванию?<input type="checkbox" name="sort" value="3">
+	</p>
+	<input type="button" value="Сортировать">
+	</details>
+    <table border="1" cellspacing="0"> 
+		<tr> 
+			<td><b>Производитель</b></td>
+			<td><b>Продукт</b></td>
+			<td><b>Год</b></td>
+			<td><b>Архитектура</b></td>
+			<td><b>Кол-во ядер</b></td>
+			<td><b>Базовая частота, гГц</b></td>
+			<td><b>Разъём</b></td>
+			<td><b>Техпроцесс, нм</b></td>
+		</tr>
+		<tr>
+			<td>Intel</td>
+			<td>4004</td>
+			<td>1971</td>
+			<td>Гарвардская</td>
+			<td>1</td>
+			<td>0,0005</td>
+			<td>DIP16</td>
+			<td>10000</td>
+		</tr>
+		<tr>
+			<td>Intel</td>
+			<td>8080</td>
+			<td>1974</td>
+			<td>Гарвардская</td>
+			<td>1</td>
+			<td>0,002</td>
+			<td>DIP40</td>
+			<td>6000</td>
+		</tr>
+		<tr>
+			<td>Texas Instruments</td>
+			<td>TMS1000</td>
+			<td>1974</td>
+			<td>Гарвардская</td>
+			<td>1</td>
+			<td>0,006</td>
+			<td>DIP28</td>
+			<td>8000</td>
+		</tr> 
+		<tr>
+			<td>MOS Technology</td>
+			<td>6502</td>
+			<td>1975</td>
+			<td>Гарвардская</td>
+			<td>1</td> 
+			<td>0,001</td>
+			<td>DIP40</td>
+			<td>8000</td> 
+		</tr> 
+		<tr> 
+			<td>RCA</td>
+			<td>CDP 1802</td> 
+			<td>1976</td>
+			<td>Гарвардская</td>
+			<td>1</td> 
+			<td>0,002</td>
+			<td>DIP40</td> 
+			<td>5000</td>
+		</tr>
+		<tr> 
+			<td>Zilog</td>
+			<td>Z80</td>
+			<td>1976</td>
+			<td>Гарвардская</td>
+			<td>1</td> 
+			<td>0,0025</td> 
+			<td>DIP40</td>
+			<td>4000</td>
+		</tr> 
+		<tr> 
+			<td>Intel</td>
+			<td>8086</td>
+			<td>1978</td> 
+			<td>x86</td>
+			<td>1</td>
+			<td>0,005</td>
+			<td>DIP40</td>
+			<td>3000</td> 
+			</tr> 
+			<tr>
+			<td>Intel</td>
+			<td>8088</td>
+			<td>1979</td>
+			<td>x86</td>
+			<td>1</td> 
+			<td>0,00477</td>
+			<td>DIP40</td>
+			<td>3000</td> 
+			</tr> 
+			<tr> 
+			<td>Motorola</td>
+			<td>68000</td>
+			<td>1979</td>
+			<td>Motorola 68000 series</td> 
+			<td>1</td>
+			<td>0,008</td>
+			<td>DIP64</td>
+			<td>5000</td> 
+			</tr> 
+			<tr> 
+			<td>Intel</td>
+			<td>80386</td>
+			<td>1985</td> 
+			<td>x86</td>
+			<td>1</td> 
+			<td>0,012</td>
+			<td>PGA132</td>
+			<td>1500</td> 
+			</tr> 
+			<tr> 
+			<td>Acorn Computers</td>
+			<td>ARM2</td> 
+			<td>1987</td>
+			<td>ARM</td> 
+			<td>1</td>
+			<td>0,012</td> 
+			<td>PGA84</td>
+			<td>3000</td> 
+			</tr> 
+			<tr> 
+			<td>AIM</td>
+			<td>PowerPC 601</td>
+			<td>1992</td> 
+			<td>PowerPC</td>
+			<td>1</td> 
+			<td>0,05</td>
+			<td>PGA304</td>
+			<td>800</td> 
+			</tr> 
+			<tr> 
+			<td>Intel</td>
+			<td>Pentium</td> 
+			<td>1993</td>
+			<td>x86</td>
+			<td>1</td> 
+			<td>0,066</td>
+			<td>PGA273</td>
+			<td>600</td> 
+			</tr> 
+			<tr> 
+			<td>AMD</td>
+			<td>Athlon 1000</td>
+			<td>2000</td> 
+			<td>x86</td> 
+			<td>1</td>
+			<td>1</td>
+			<td>Socket A</td> 
+			<td>180</td>
+			</tr>
+			<tr> 
+			<td>Intel</td>
+			<td>Pentium 4</td>
+			<td>2000</td>
+			<td>x86</td>
+			<td>1</td>
+			<td>1,5</td>
+			<td>Socket 423</td>
+			<td>180</td> 
+			</tr> 
+			<tr>
+			<td>AMD</td>
+			<td>Athlon 64 3000+</td>
+			<td>2003</td> 
+			<td>x86</td>
+			<td>1</td> 
+			<td>2</td>
+			<td>Socket 754</td>
+			<td>130</td>
+			</tr> 
+			<tr> 
+			<td>AMD</td> 
+			<td>Opteron 240</td>
+			<td>2003</td> 
+			<td>x86</td>
+			<td>1</td> 
+			<td>1,4</td>
+			<td>Socket 940</td> 
+			<td>130</td> 
+			</tr> 
+			<tr> 
+			<td>Intel</td>
+			<td>Core 2 Duo E6300</td>
+			<td>2006</td>
+			<td>x86</td> 
+			<td>2</td> 
+			<td>1,86</td>
+			<td>LGA 775</td>
+			<td>65</td> 
+			</tr> 
+			<tr> 
+			<td>Intel</td> 
+			<td>Core i5-2500K</td>
+			<td>2011</td>
+			<td>x86</td> 
+			<td>4</td> 
+			<td>3,3</td>
+			<td>LGA 1155</td>
+			<td>32</td>
+			</tr> 
+			<tr> 
+			<td>AMD</td>
+			<td>Ryzen 7 1700</td>
+			<td>2017</td>
+			<td>x86</td>
+			<td>8</td>
+			<td>3,0</td> 
+			<td>AM4</td> 
+			<td>14</td> 
+			</tr>
+			<tr> 
+			<td>Intel</td>
+			<td>Core i7-8700K</td>
+			<td>2017</td> 
+			<td>x86</td>
+			<td>6</td> 
+			<td>3,7</td> 
+			<td>LGA 1151</td> 
+			<td>14</td> 
+			</tr> 
+			<tr> 
+			<td>AMD</td>
+			<td>Ryzen 9 3950X</td>
+			<td>2019</td> 
+			<td>x86</td>
+			<td>16</td>
+			<td>3,5</td>
+			<td>AM4</td>
+			<td>7</td> 
+			</tr>
+        <tr> 
+			<td>Apple</td>
+			<td>M1</td> 
+			<td>2020</td> 
+			<td>ARM</td> 
+			<td>8</td>
+			<td>3,2</td> 
+			<td>Proprietary</td>
+			<td>5</td> 
+		</tr>
+		<tr> 
+			<td>Esperanto</td>
+			<td>ET-SoC-1</td> 
+			<td>2021</td> 
+			<td>RISC-V</td> 
+			<td>1088</td> 
+			<td>1,5</td> 
+			<td>Proprietary</td>
+			<td>7</td> 
+		</tr> 
+		<tr> 
+			<td>Intel</td>
+			<td>Core i9-12900K</td>
+			<td>2021</td> 
+			<td>x86-64</td> 
+			<td>16</td> 
+			<td>3,2</td>
+			<td>LGA 1700</td> 
+			<td>10</td> 
+		</tr>
+		<tr> 
+			<td>Snapdragon</td>
+			<td>X Elite</td> 
+			<td>2024</td>
+			<td>ARM</td> 
+			<td>12</td>
+			<td>3,8</td> 
+			<td>Proprietary</td>
+			<td>4</td>
+		</tr> 
+		<tr>
+			<td>AMD</td>
+			<td>Ryzen 7 5800X3D</td>
+			<td>2022</td>
+			<td>x86-64</td> 
+			<td>8</td> 
+			<td>3,4</td> 
+			<td>AM4</td>
+			<td>7</td> 
+		</tr>
+		<tr> 
+			<td>Signetics</td>
+			<td>2650</td>
+			<td>1975</td> 
+			<td>Гарвардская</td>
+			<td>1</td> 
+			<td>0,001</td>
+			<td>DIP40</td>
+			<td>6000</td>
+		</tr> 
+		<tr> 
+			<td>Intersil</td>
+			<td>6100</td> 
+			<td>1975</td> 
+			<td>Гарвардская</td>
+			<td>1</td> 
+			<td>0,003</td> 
+			<td>DIP40</td> 
+			<td>6000</td>
+		</tr>
+		<tr> 
+			<td>National Semiconductor</td>
+			<td>IMP-16</td>
+			<td>1973</td> 
+			<td>Гарвардская</td>
+			<td>1</td>
+			<td>0,002</td> 
+			<td>DIP40</td> 
+			<td>6000</td> 
+		</tr> 
+		<tr> 
+			<td>Western Digital</td>
+			<td>MCP-1600</td>
+			<td>1977</td> 
+			<td>Гарвардская</td>
+			<td>1</td> 
+			<td>0,005</td>
+			<td>DIP40</td> 
+			<td>6000</td>
+		</tr>
+		<tr> 
+			<td>General Instrument</td> 
+			<td>CP1600</td>
+			<td>1975</td>
+			<td>Гарвардская</td>
+			<td>1</td> 
+			<td>0,006</td>
+			<td>DIP40</td>
+			<td>6000</td> 
+		</tr> 
+		<tr> 
+			<td>Bell Labs</td>
+			<td>BELLMAC-32A</td> 
+			<td>1978</td>
+			<td>Гарвардская</td>
+			<td>1</td> 
+			<td>0,005</td>
+			<td>DIP40</td>
+			<td>5000</td> 
+		</tr>
+		<tr> 
+			<td>HP</td>
+			<td>FOCUS</td> 
+			<td>1982</td> 
+			<td>HP 9000</td>
+			<td>1</td> 
+			<td>0,008</td> 
+			<td>DIP64</td> 
+			<td>5000</td>
+		</tr> 
+		<tr>
+			<td>Motorola</td>
+			<td>68020</td> 
+			<td>1984</td> 
+			<td>Motorola 68000 series</td>
+			<td>1</td>
+			<td>0,012</td> 
+			<td>DIP64</td> 
+			<td>5000</td> 
+		</tr> 
+        <tr> <td>MIPS Computer Systems</td>
+		<td>R2000</td> 
+		<td>1985</td>
+		<td>MIPS</td>
+		<td>1</td>
+		<td>0,012</td> 
+		<td>PGA121</td>
+		<td>1000</td>
+		</tr>
+		<tr>
+		<td>Fujitsu</td>
+		<td>SPARC MB86900</td>
+		<td>1986</td> 
+		<td>SPARC</td>
+		<td>1</td> 
+		<td>0,016</td> 
+		<td>PGA184</td>
+		<td>1000</td> 
+		</tr> 
+		<tr> 
+		<td>Intel</td> 
+		<td>80486</td>
+		<td>1989</td> 
+		<td>x86</td> 
+		<td>1</td>
+		<td>0,025</td> 
+		<td>PGA168</td>
+		<td>1000</td> 
+		</tr>
+		<tr> <td>IBM</td>
+		<td>POWER1</td> 
+		<td>1990</td> 
+		<td>PowerPC</td>
+		<td>1</td> 
+		<td>0,030</td> 
+		<td>PGA251</td>
+		<td>1000</td> 
+		</tr> 
+		<tr> 
+		<td>AMD</td>
+		<td>K5</td>
+		<td>1996</td>
+		<td>x86</td>
+		<td>1</td> 
+		<td>0,060</td> 
+		<td>Socket 7</td>
+		<td>500</td>
+		</tr> 
+		<tr> 
+		<td>Sony</td>
+		<td>Emotion Engine</td>
+		<td>2000</td> 
+		<td>MIPS-III</td> 
+		<td>1</td> 
+		<td>0,299</td> 
+		<td>PGA540</td>
+		<td>180</td> 
+		</tr> 
+		<tr> 
+		<td>STI</td>
+		<td>Cell</td> 
+		<td>2006</td>
+		<td>Cell</td>
+		<td>1</td> 
+		<td>3,2</td>
+		<td>PGA940</td>
+		<td>65</td> 
+		</tr> 
+		<tr> 
+		<td>Intel</td> 
+		<td>80486</td>
+		<td>1989</td>
+		<td>Гарвардская</td>
+		<td>1</td>
+		<td>0,025</td>
+		<td>PGA168</td> <td>1000</td> </tr> <tr> <td>Intel</td> <td>Itanium 2</td> <td>2002</td>
+		<td>VLIW</td> 
+		<td>1</td>
+		<td>0,100</td>
+		<td>PGA611</td>
+		<td>180</td> 
+		</tr> 
+		<tr> 
+		<td>IBM</td>
+		<td>Xenon</td>
+		<td>2005</td> 
+		<td>PowerPC</td>
+		<td>3</td>
+		<td>3,2</td> 
+		<td>BGA2131</td>
+		<td>90</td>
+		</tr> 
+		<tr> 
+		<td>AMD</td>
+		<td>Ryzen Threadripper 3990X</td>
+		<td>2020</td>
+		<td>x86</td>
+		<td>64</td>
+		<td>2,9</td>
+		<td>Socket sTRX4</td> 
+		<td>7</td> 
+		</tr>
+		<tr> 
+		<td>Intel</td>
+		<td>Xeon W-3175X</td>
+		<td>2019</td> 
+		<td>x86</td> 
+		<td>28</td>
+		<td>3,1</td>
+		<td>LGA 3647</td>
+		<td>14</td> 
+		</tr> 
+		<tr> 
+		<td>Intel</td>
+		<td>Core i9-9900K</td>
+		<td>2018</td> 
+		<td>x86</td>
+		<td>8</td>
+		<td>3,6</td>
+		<td>LGA 1151</td>
+		<td>14</td>
+		</tr> 
+		<tr> 
+		<td>AMD</td>
+		<td>Ryzen 5 7600X3D</td>
+		<td>2022</td>
+		<td>x86</td> 
+		<td>6</td>
+		<td>3,8</td>
+		<td>AM5</td>
+		<td>5</td>
+		</tr> 
+		<tr> 
+		<td>AMD</td>
+		<td>FX-9590</td>
+		<td>2013</td>
+		<td>x86</td>
+		<td>8</td> 
+		<td>4,7</td> 
+		<td>AM3+</td> 
+		<td>32</td> 
+		</tr>
+    </table>
+</body>
+</html>
