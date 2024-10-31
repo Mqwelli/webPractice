@@ -1,2 +1,2 @@
-html/css/javascript practice
+html/css/javascript practice;
 currently studying css, html only example available
