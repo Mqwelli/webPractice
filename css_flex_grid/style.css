@@ -1,0 +1,164 @@
+.content {
+	width: 100%;
+	height: 95%;	
+	border: 1px solid;
+}
+.top{
+	display: flex;
+	width: 100%;
+}
+.tblock{
+	width: 30%;
+	height: 100%;	
+	margin: 0px auto;
+	text-align: center;		
+	background-color: lightgrey;
+	box-sizing: border-box;
+}
+.logo{
+	margin: 2em 0em;
+	width: 50%; 
+	height: 60%;
+}
+.buttonblock{
+	display: inline-flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	width: 70%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	background-color: lightgrey;
+	text-align: right;
+	align-self: flex-end;
+	box-sizing: border-box;
+	white-space: nowrap;
+}
+.button-text{
+	width: 100%;
+	margin: 0px;
+	text-align: right;
+}
+.menu{
+	padding: 1%;
+	margin: 1%;
+	width: auto;
+	font-size: 20px;
+	color: black;	
+}
+.menu:hover{
+	color: red;
+}
+.grid-container{
+	display:grid;
+	width: 90%;
+	margin: auto;
+	justify-content: space-evenly;
+	grid-template-rows: 2fr 1fr 1fr;
+	grid-template-columns: repeat(4,1fr);
+	grid-template-areas:
+		"img1 img2 img2 img3"
+		"box1 box2 box3 box4"
+		"body1 body2 body3 body4";
+	grid-row-gap: 10px;
+	
+}
+.grid-container img{
+	width: 100%;
+	height: 100%;
+}
+.grid-container > .gallery-img1{
+	grid-area: img1;
+}
+.grid-container > .gallery-img2{
+	grid-area: img2;
+}
+.grid-container > .gallery-img3{
+	grid-area: img3;
+}
+.textbox-1{
+	grid-area: box1;
+	align-content: center;
+}
+.textbox-2{
+	grid-area: box2;
+	align-content: center;
+}
+.textbox-3{
+	grid-area: box3;
+	align-content: center;
+}
+.textbox-4{
+	grid-area: box4;
+	align-content: center;
+}
+.textbox-img{
+	margin: auto;
+	width: 30%;
+	height: 30%;
+}
+.textbox-header {
+	text-align: center;
+	margin: 5px;
+}
+.textbox-body-1{
+	grid-area: body1;
+	margin: 0px;
+	padding: 0px 5%;
+	text-align: justify;
+}
+.textbox-body-2{
+	grid-area: body2;
+	margin: 0px;
+	padding: 0px 5%;
+	text-align: justify;
+}
+.textbox-body-3{
+	grid-area: body3;
+	margin: 0px;
+	padding: 0px 5%;
+	text-align: justify;
+}
+.textbox-body-4{
+	grid-area: body4;
+	margin: 0px;
+	padding: 0px 5%;
+	text-align: justify;
+}
+.down {
+	margin: 0px;
+	padding: 7px;
+	height: 20%;
+	background-color: grey;
+}
+.float-right{
+	float: right;
+}
+@media (max-width: 700px){
+	.buttonblock{
+		display: grid;
+		grid-template-columns: repeat(2,1fr);
+		grid-template-rows: repeat(2,1fr);
+		background-color: white;
+		align-self: center;
+	}
+	.button-text{
+		text-align: center;
+	}
+	.grid-container{
+		grid-template-rows: repeat(11,1fr);
+		grid-template-columns: 1fr;
+		grid-template-areas:
+			"img1"
+			"box1"
+			"body1"
+			"img2"
+			"box2"
+			"body2"
+			"box3"
+			"body3"
+			"img3"
+			"box4"
+			"body4";
+	}
+}
