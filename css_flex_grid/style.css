@@ -94,8 +94,8 @@
 }
 .textbox-img{
 	margin: auto;
-	width: 30%;
-	height: 30%;
+	width: 50%;
+	height: 70%;
 }
 .textbox-header {
 	text-align: center;
@@ -145,8 +145,13 @@
 	.button-text{
 		text-align: center;
 	}
+	.textbox-img{
+		width: 30%;
+		height: 70%;
+	}
 	.grid-container{
-		grid-template-rows: repeat(11,1fr);
+		vertical-align: middle;
+		grid-template-rows: 1fr auto auto 1fr auto auto auto auto 1fr auto auto;
 		grid-template-columns: 1fr;
 		grid-template-areas:
 			"img1"
