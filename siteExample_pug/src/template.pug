@@ -1,0 +1,17 @@
+include components/mixin.pug
+include components/data.pug
+doctype html
+html(lang="ru")
+	head
+		block title
+			title #{title}
+	body
+		block header
+			
+		block nav
+			img(src= require("./images/" + listImages[1]))
+		block content
+		
+		block footer
+			footer
+				h4 &copy; Пример html-страницы

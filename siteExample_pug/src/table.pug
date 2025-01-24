@@ -1,0 +1,103 @@
+extends template
+block nav
+	nav
+		nav__logo
+			img(src= require("./images/" + listImages[1]))
+		nav__buttons
+			+createMenu(dictMenu,'Solutions')
+block content
+	section
+		details
+			summary График
+			table(border="0")
+				tr(align="center")
+					td 
+						p=tableInfo[0]
+					td
+						p=tableInfo[1]
+				tr
+					td
+						form
+							input(type="radio" name="Xvalue" value="frequency") 
+							p=tableInfo[2]
+							input(type="radio" name="Xvalue" value="country") 
+							p=tableInfo[3]
+							input(type="radio" name="Xvalue" value="year") 
+							p=tableInfo[4]
+					td
+						form
+							input(type="checkbox" name="result" value="minfreq")
+							p=tableInfo[5]
+							input(type="checkbox" name="result" value="maxfreq")
+							p=tableInfo[6]
+							input(type="checkbox" name="result" value="mintp")
+							p=tableInfo[7]
+				input(type="button" value="Построить")
+		details
+			summary Фильтр
+			form
+				p='Модель:'
+				input(type="text")
+				p='Архитектура:'
+				input(type="text")
+				p='Ядра:'
+				input(type="text")
+				p='Потоки:'
+				input(type="text")
+				p='Год: от'
+				input(type="number")
+				p='до'
+				input(type="number")
+				p='Базовая частота: от'
+				input(type="number")
+				p='до'
+				input(type="number")
+				p=''
+				input(type="button" value="Найти")
+		details
+			summary Сортировка
+			p='Первый уровень:'
+			select(name="first")
+				option(value="0") Нет
+				option(value="1") Производитель
+				option(value="2") Продукт
+				option(value="3") Год
+				option(value="4") Архитектура
+				option(value="5") Количество ядер
+				option(value="6") Базовая частота
+				option(value="7") Разъём
+				option(value="8") Техпроцесс
+			p='По убыванию?'
+			input(type="checkbox" name="sort" value="1")
+			p='Второй уровень:'
+			select(name="second")
+				option(value="0") Нет
+				option(value="1") Производитель
+				option(value="2") Продукт
+				option(value="3") Год
+				option(value="4") Архитектура
+				option(value="5") Количество ядер
+				option(value="6") Базовая частота
+				option(value="7") Разъём
+				option(value="8") Техпроцесс
+			p='По убыванию?'
+			input(type="checkbox" name="sort" value="2")
+			p='Третий уровень:'
+			select(name="third")
+				option(value="0") Нет
+				option(value="1") Производитель
+				option(value="2") Продукт
+				option(value="3") Год
+				option(value="4") Архитектура
+				option(value="5") Количество ядер
+				option(value="6") Базовая частота
+				option(value="7") Разъём
+				option(value="8") Техпроцесс
+			p='По убыванию?'
+			input(type="checkbox" name="sort" value="3")
+			input(type="button" value="Сортировать")
+	content_article_section
+		table
+			+createTable(listSections)
+block title
+	title=structures[0].menuItem

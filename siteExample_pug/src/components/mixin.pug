@@ -1,0 +1,30 @@
+mixin createMenu(menu,active)
+	each value, key in menu
+		if active == key
+			nav__button_active 
+				a(href= value)= key
+		else
+			nav__button
+				a(href=value)= key
+mixin createMenuBuild(menu, active)
+	- var i = 1
+	each value, key in menu
+		nav__button
+			a(href= value)= key
+		- i ++
+		if (i == 2)
+			nav__button_active
+				a(href= "#")= active
+mixin createTable(info)
+	tr
+		th='Model'
+		th='Architecture'
+		th='Year'
+		th='Cores'
+		th='Threads'
+		th='Base Frequency'
+		th='Boost Frequency'
+	each value in info
+		tr
+		each key in value
+			td=key

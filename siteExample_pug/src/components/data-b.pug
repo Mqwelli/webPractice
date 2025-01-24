@@ -1,0 +1,73 @@
+block variables
+    - var title = 'AMD'
+    //-
+        словарь для описания меню: элемент меню и название файла
+    -
+        var dictMenu = { 
+            'Products': 'index.html', 
+            'Solutions': 'table.html',  
+            'Support': "#", 
+            'Shop': "#"
+        }
+    //-
+        список файлов с рисунками для раздела сайта images
+    - 
+        var listImages = ['amd.jpg', 'amdl.png', 'epyc.jpg', 'epyc2.png', 'rd.jpg', 'rdh.jpg', 'rdh2.png', 'ryzen7.jpg', 'zen.jpg']
+
+    
+    //-
+        словарь для карточек (раздел section): заголовок, рисунок, текст
+    - 
+        var listSections = [
+            {
+                'name': 'AMD Ryzen™ 7 PRO 8700GE',
+                'arch': '1',
+                'year': '1',
+                'cores': '1',
+                'threads': '1',
+                'base': '1',
+                'boost': '1'
+            },
+            {
+                'name': '1',
+                'arch': '1',
+                'year': '1',
+                'cores': '1',
+                'threads': '1',
+                'base': '1',
+                'boost': '1'
+            },
+            {
+                'name': '1',
+                'arch': '1',
+                'year': '1',
+                'cores': '1',
+                'threads': '1',
+                'base': '1',
+                'boost': '1'
+            }
+        ]
+
+    -
+        var structures = [
+        {
+            'menuItem': "The Fastest Gaming Processor Ever",  /* то, что отобразится в меню */
+            'pict': "zen.jpg", /* ссылка на рисунок */
+            'firstP': `Harness the ultimate gaming edge with AMD Ryzen™ 7 9800X3D Processor. Enjoy faster gaming with 2nd gen AMD 3D V-Cache™ technology for low latency.`
+        },
+        {
+            'menuItem': "Next-Generation Performance", 
+            'pict': "rdh.jpg",
+            'firstP': `Break through new levels of performance with up to 24 GB of GDDR6 memory and blazing fast clock speeds for an incredible gaming experience. AMD Radeon RX 7000 Series graphics feature advanced AMD RDNA 3 compute units, with second-generation`
+        },
+        {
+            'menuItem': "Breathtaking Visuals", 
+            'pict': "rdh2.png", 
+            'firstP': `A pixel- perfect experience starts with Radeon RX 7000 Series graphics cards and the new AMD Radiance Display™ Engine. Immerse yourself in your favorite visual vistas with stunning image clarity and up to 68 billion colors at up to 8K 165 Hz.`
+        },
+        {
+            'menuItem': "Enterprise Performance, Optimized", 
+            'pict': "epyc2.png", 
+            'firstP': `AMD EPYC 9005 processors deliver exceptional performance while enabling leadership energy efficiency and cost-of-ownership (TCO) value in support of key business imperatives.`
+        }
+        ];

@@ -1,0 +1,34 @@
+extends template
+block nav
+	nav
+		nav__logo
+			img(src= require("./images/" + listImages[1]))
+		nav__buttons
+			+createMenu(dictMenu, 'Products')
+block content
+	div.images
+		a(href= "ryzen.html")
+			img(src= require("./images/" + listImages[7]))
+		img(src= require("./images/" + listImages[4]))
+		img(src= require("./images/" + listImages[2]))
+	content
+		content__article
+			img(src= require("./images/" + structures[0].pict))
+			h3= structures[0].menuItem
+			p= structures[0].firstP
+				a(href="#") &hellip;
+		content__article
+			img(src= require("./images/" + structures[1].pict))
+			h3= structures[1].menuItem
+			p= structures[1].firstP
+				a(href="#") &hellip;
+		content__article
+			img(src= require("./images/" + structures[2].pict))
+			h3= structures[2].menuItem
+			p= structures[2].firstP
+				a(href="#") &hellip;
+		content__article
+			img(src= require("./images/" + structures[3].pict))
+			h3= structures[3].menuItem
+			p= structures[3].firstP
+				a(href="#") &hellip;

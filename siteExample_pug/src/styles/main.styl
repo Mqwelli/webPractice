@@ -1,0 +1,107 @@
+back(size)
+	background-color #f1f1f1
+	box-shadow 4px 5px 10px rgba(0, 0, 0, 0.4)
+	padding: size + "%"
+	margin 0 0 1% 0
+colorText = #6f6d6d
+html
+	color colorText
+nav
+	back(0)
+	display flex
+	justify-content space-between
+	text-align center
+	&__buttons
+		display inline-flex
+		flex-direction row
+		box-sizing border-box
+		justify-content flex-end
+	&__button
+		display inline-flex
+		padding 5%
+		& a
+			color colorText
+			text-decoration none
+		&:hover
+			background-color #f87777
+			& a
+				color #ffffff
+		&_active
+			padding 5%
+			background-color #f87777
+			& a
+				text-decoration none
+				color #ffffff
+	&__logo
+		text-align left
+		vertical-align top
+tdcolor(odd = #dddddd,even = #eeeeee)
+	tbody tr td:nth-child(even)
+		background-color even 
+	tbody tr td:nth-child(odd)
+		background-color odd
+table
+	tdcolor()
+	border solid thin
+	th
+		border solid thin
+	td
+		padding 4px
+		text-align center
+div.images
+	display grid
+	grid-template-columns repeat(3,1fr)
+	align-items center
+	grid-gap 0.5%
+	back(1)
+	& img
+		width: 100%
+content
+	display grid
+	grid-template-columns repeat(4,1fr)
+	justify-items center
+	margin auto
+	width 100%
+	&__article
+		width 90%
+		display grid
+		grip-gap 4%
+		grid-template-columns 1fr
+		& h3
+			margin 0
+			text-align center
+		& img
+			width 30%
+			margin auto
+		back(2)
+footer
+	background-color colorText
+	& h4
+		padding 5px
+		color #f8f8f8
+img.big
+	display block
+	margin: 0 auto
+@media (max-width: 650px)
+	nav
+		display grid
+		grid-template-columns 1fr
+		&__logo
+			margin auto
+		justify-content space-around
+		&__buttons
+			display inline-block
+			& a
+				display inline-block
+	div.images
+		grid-template-columns 1fr
+		overflow hidden
+		& img
+			display block
+			width 80%
+			margin auto
+	content
+		grid-template-columns 1fr
+		width 100%
+	img.big
+		width 80%

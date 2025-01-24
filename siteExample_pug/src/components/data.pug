@@ -1,0 +1,498 @@
+block variables
+    - var title = 'AMD'
+    //-
+        словарь для описания меню: элемент меню и название файла
+    -
+        var dictMenu = { 
+            'Products': 'index.html', 
+            'Solutions': 'table.html',  
+            'Support': "#", 
+            'Shop': "#"
+        }
+    //-
+        список файлов с рисунками для раздела сайта images
+    - 
+        var listImages = ['amd.jpg', 'amdl.png', 'epyc.jpg', 'epyc2.png', 'rd.jpg', 'rdh.jpg', 'rdh2.png', 'ryzen7.jpg', 'zen.jpg']
+
+    - 
+        var tableInfo = ['Значение по оси X', 'Результат', 'Архитектура', 'Модель', 'Год', 'Базовая частота', 'Boost частота', 'Число ядер', 'zen.jpg']
+
+    
+    //-
+        словарь для карточек (раздел section): заголовок, рисунок, текст
+    - 
+        var listSections = [
+            {
+                'name': 'AMD Ryzen™ 7 PRO 8700GE',
+                'arch': 'Zen 4',
+                'year': '2024',
+                'cores': '8',
+                'threads': '16',
+                'base': '3.6',
+                'boost': '5.1'
+            },
+            {
+                'name': 'AMD Ryzen™ 7 PRO 8700G',
+                'arch': 'Zen 4',
+                'year': '2024',
+                'cores': '8',
+                'threads': '16',
+                'base': '4.2',
+                'boost': '5.1'
+            },
+            {
+                'name': 'AMD Ryzen™ 5 PRO 8600GE',
+                'arch': 'Zen 4',
+                'year': '2024',
+                'cores': '6',
+                'threads': '12',
+                'base': '3.9',
+                'boost': '5'
+            },
+            {
+                'name': 'AMD Ryzen™ 5 PRO 8600G',
+                'arch': 'Zen 4',
+                'year': '2024',
+                'cores': '6',
+                'threads': '12',
+                'base': '3.4',
+                'boost': '5'
+            },
+            {
+                'name': 'AMD Ryzen™ 5 9600X',
+                'arch': 'Zen 5',
+                'year': '2024',
+                'cores': '6',
+                'threads': '12',
+                'base': '3.9',
+                'boost': '5.4'
+            },
+            {
+                'name': 'AMD Ryzen™ 7 9700X',
+                'arch': 'Zen 5',
+                'year': '2024',
+                'cores': '8',
+                'threads': '16',
+                'base': '3.8',
+                'boost': '5.5'
+            },
+            {
+                'name': 'AMD Ryzen™ 7 9800X3D',
+                'arch': 'Zen 5',
+                'year': '2024',
+                'cores': '8',
+                'threads': '16',
+                'base': '4.7',
+                'boost': '5.2'
+            },
+            {
+                'name': 'AMD Ryzen™ 9 9900X',
+                'arch': 'Zen 5',
+                'year': '2024',
+                'cores': '12',
+                'threads': '24',
+                'base': '4.4',
+                'boost': '5.5'
+            },
+            {
+                'name': 'AMD Ryzen™ 9 9950X3D',
+                'arch': 'Zen 5',
+                'year': '2025',
+                'cores': '16',
+                'threads': '32',
+                'base': '4',
+                'boost': '5.6'
+            },
+            {
+                'name': 'AMD Ryzen™ 5 7600X',
+                'arch': 'Zen 4',
+                'year': '2022',
+                'cores': '6',
+                'threads': '12',
+                'base': '4.7',
+                'boost': '5.3'
+            },
+            {
+                'name': 'AMD Ryzen™ 5 7500F',
+                'arch': 'Zen 4',
+                'year': '2023',
+                'cores': '6',
+                'threads': '12',
+                'base': '3.7',
+                'boost': '5'
+            },
+            {
+                'name': 'AMD Ryzen™ 7 7700',
+                'arch': 'Zen 4',
+                'year': '2023',
+                'cores': '8',
+                'threads': '16',
+                'base': '3.8',
+                'boost': '5.3'
+            },
+            {
+                'name': 'AMD Ryzen™ 9 7900',
+                'arch': 'Zen 4',
+                'year': '2023',
+                'cores': '12',
+                'threads': '24',
+                'base': '3.7',
+                'boost': '5.4'
+            },
+            {
+                'name': 'AMD Ryzen™ 9 7950X',
+                'arch': 'Zen 4',
+                'year': '2022',
+                'cores': '16',
+                'threads': '32',
+                'base': '4.5',
+                'boost': '5.7'
+            },
+            {
+                'name': 'AMD Ryzen™ 3 8300G',
+                'arch': 'Zen 4',
+                'year': '2024',
+                'cores': '4',
+                'threads': '8',
+                'base': '3.4',
+                'boost': '4.9'
+            },
+            {
+                'name': 'AMD Ryzen™ 3 5300G',
+                'arch': 'Zen 3',
+                'year': '2021',
+                'cores': '4',
+                'threads': '8',
+                'base': '4',
+                'boost': '4.2'
+            },
+            {
+                'name': 'AMD Ryzen™ 5 5500',
+                'arch': 'Zen 3',
+                'year': '2022',
+                'cores': '6',
+                'threads': '12',
+                'base': '3.6',
+                'boost': '4.2'
+            },
+            {
+                'name': 'AMD Ryzen™ 5 PRO 5650GE',
+                'arch': 'Zen 3',
+                'year': '2021',
+                'cores': '6',
+                'threads': '12',
+                'base': '3.4',
+                'boost': '4.4'
+            },
+            {
+                'name': 'AMD Ryzen™ 7 5700',
+                'arch': 'Zen 3',
+                'year': '2022',
+                'cores': '8',
+                'threads': '16',
+                'base': '3.7',
+                'boost': '4.6'
+            },
+            {
+                'name': 'AMD Ryzen™ 7 5700G',
+                'arch': 'Zen 3',
+                'year': '2021',
+                'cores': '8',
+                'threads': '16',
+                'base': '3.8',
+                'boost': '4.6'
+            },
+            {
+                'name': 'AMD Ryzen™ 5 5600X3D',
+                'arch': 'Zen 3',
+                'year': '2023',
+                'cores': '6',
+                'threads': '12',
+                'base': '3.3',
+                'boost': '4.4'
+            },
+            {
+                'name': 'AMD Ryzen™ 5 5600X',
+                'arch': 'Zen 3',
+                'year': '2020',
+                'cores': '6',
+                'threads': '12',
+                'base': '3.7',
+                'boost': '4.6'
+            },
+            {
+                'name': 'AMD Ryzen™ 7 5700X',
+                'arch': 'Zen 3',
+                'year': '2022',
+                'cores': '8',
+                'threads': '16',
+                'base': '3.4',
+                'boost': '4.6'
+            },
+            {
+                'name': 'AMD Ryzen™ 7 5800X',
+                'arch': 'Zen 3',
+                'year': '2020',
+                'cores': '8',
+                'threads': '16',
+                'base': '3.8',
+                'boost': '4.7'
+            },
+            {
+                'name': 'AMD Ryzen™ 9 5900',
+                'arch': 'Zen 3',
+                'year': '2021',
+                'cores': '12',
+                'threads': '24',
+                'base': '3',
+                'boost': '4.7'
+            },
+            {
+                'name': 'AMD Ryzen™ 9 5950X',
+                'arch': 'Zen 3',
+                'year': '2020',
+                'cores': '16',
+                'threads': '32',
+                'base': '3.4',
+                'boost': '4.9'
+            },
+            {
+                'name': 'AMD Ryzen™ 3 4100',
+                'arch': 'Zen 2',
+                'year': '2022',
+                'cores': '4',
+                'threads': '8',
+                'base': '3.8',
+                'boost': '4'
+            },
+            {
+                'name': 'AMD Ryzen™ 5 PRO 4650G',
+                'arch': 'Zen 2',
+                'year': '2020',
+                'cores': '6',
+                'threads': '12',
+                'base': '3.7',
+                'boost': '4.2'
+            },
+            {
+                'name': 'AMD Ryzen™ 7 4700G',
+                'arch': 'Zen 2',
+                'year': '2020',
+                'cores': '8',
+                'threads': '16',
+                'base': '3.6',
+                'boost': '4.4'
+            },
+            {
+                'name': 'AMD Ryzen™ 3 3300X',
+                'arch': 'Zen 2',
+                'year': '2020',
+                'cores': '4',
+                'threads': '8',
+                'base': '3.8',
+                'boost': '4.3'
+            },
+            {
+                'name': 'AMD Ryzen™ 5 3600',
+                'arch': 'Zen 2',
+                'year': '2019',
+                'cores': '6',
+                'threads': '12',
+                'base': '3.6',
+                'boost': '4.2'
+            },
+            {
+                'name': 'AMD Ryzen™ 7 3800X',
+                'arch': 'Zen 2',
+                'year': '2019',
+                'cores': '8',
+                'threads': '16',
+                'base': '3.9',
+                'boost': '4.5'
+            },
+            {
+                'name': 'AMD Ryzen™ 9 3900X',
+                'arch': 'Zen 2',
+                'year': '2019',
+                'cores': '12',
+                'threads': '24',
+                'base': '3.8',
+                'boost': '4.6'
+            },
+            {
+                'name': 'AMD Ryzen™ 9 3950X',
+                'arch': 'Zen 2',
+                'year': '2019',
+                'cores': '16',
+                'threads': '32',
+                'base': '3.5',
+                'boost': '4.7'
+            },
+            {
+                'name': 'AMD Ryzen™ 3 2300X',
+                'arch': 'Zen +',
+                'year': '2018',
+                'cores': '4',
+                'threads': '4',
+                'base': '3.5',
+                'boost': '4'
+            },
+            {
+                'name': 'AMD Ryzen™ 5 2500X',
+                'arch': 'Zen +',
+                'year': '2018',
+                'cores': '4',
+                'threads': '8',
+                'base': '3.6',
+                'boost': '4'
+            },
+            {
+                'name': 'AMD Ryzen™ 5 1600AF',
+                'arch': 'Zen +',
+                'year': '2019',
+                'cores': '6',
+                'threads': '12',
+                'base': '3.2',
+                'boost': '3.6'
+            },
+            {
+                'name': 'AMD Ryzen™ 5 2600',
+                'arch': 'Zen +',
+                'year': '2018',
+                'cores': '6',
+                'threads': '12',
+                'base': '3.4',
+                'boost': '3.9'
+            },
+            {
+                'name': 'AMD Ryzen™ 7 2700',
+                'arch': 'Zen +',
+                'year': '2018',
+                'cores': '8',
+                'threads': '16',
+                'base': '3.2',
+                'boost': '4.1'
+            },
+            {
+                'name': 'AMD Ryzen™ 3 3200GE',
+                'arch': 'Zen +',
+                'year': '2019',
+                'cores': '4',
+                'threads': '4',
+                'base': '3.3',
+                'boost': '4'
+            },
+            {
+                'name': 'AMD Ryzen™ 5 3400G',
+                'arch': 'Zen +',
+                'year': '2019',
+                'cores': '4',
+                'threads': '8',
+                'base': '3.7',
+                'boost': '4.2'
+            },
+            {
+                'name': 'AMD Athlon Gold PRO 3150G',
+                'arch': 'Zen +',
+                'year': '2020',
+                'cores': '4',
+                'threads': '4',
+                'base': '3.5',
+                'boost': '3.9'
+            },
+            {
+                'name': 'AMD Ryzen™ 3 1300X',
+                'arch': 'Zen',
+                'year': '2017',
+                'cores': '4',
+                'threads': '4',
+                'base': '3.4',
+                'boost': '3.7'
+            },
+            {
+                'name': 'AMD Athlon 240GE',
+                'arch': 'Zen',
+                'year': '2018',
+                'cores': '2',
+                'threads': '4',
+                'base': '3.5',
+                'boost': '3.5'
+            },
+            {
+                'name': 'AMD Ryzen™ 5 PRO 2400GE',
+                'arch': 'Zen',
+                'year': '2018',
+                'cores': '4',
+                'threads': '8',
+                'base': '3.2',
+                'boost': '3.8'
+            },
+            {
+                'name': 'AMD Ryzen™ 7 1700',
+                'arch': 'Zen',
+                'year': '2017',
+                'cores': '8',
+                'threads': '16',
+                'base': '3',
+                'boost': '3.7'
+            },
+            {
+                'name': 'AMD Ryzen™ 7 1800X',
+                'arch': 'Zen',
+                'year': '2017',
+                'cores': '8',
+                'threads': '16',
+                'base': '3.6',
+                'boost': '4'
+            },
+            {
+                'name': 'AMD Ryzen™ 5 1400',
+                'arch': 'Zen',
+                'year': '2017',
+                'cores': '4',
+                'threads': '8',
+                'base': '3.2',
+                'boost': '3.4'
+            },
+            {
+                'name': 'AMD Ryzen™ 5 PRO 1500',
+                'arch': 'Zen',
+                'year': '2017',
+                'cores': '4',
+                'threads': '8',
+                'base': '3.5',
+                'boost': '3.7'
+            },
+            {
+                'name': 'AMD Ryzen™ 7 PRO 1700X',
+                'arch': 'Zen',
+                'year': '2017',
+                'cores': '8',
+                'threads': '16',
+                'base': '3.4',
+                'boost': '3.8'
+            }
+        ]
+    -
+        var structures = [
+        {
+            'menuItem': "The Fastest Gaming Processor Ever",  /* то, что отобразится в меню */
+            'pict': "zen.jpg", /* ссылка на рисунок */
+            'firstP': `Harness the ultimate gaming edge with AMD Ryzen™ 7 9800X3D Processor. Enjoy faster gaming with 2nd gen AMD 3D V-Cache™ technology for low latency.`
+        },
+        {
+            'menuItem': "Next-Generation Performance", 
+            'pict': "rdh.jpg",
+            'firstP': `Break through new levels of performance with up to 24 GB of GDDR6 memory and blazing fast clock speeds for an incredible gaming experience. AMD Radeon RX 7000 Series graphics feature advanced AMD RDNA 3 compute units, with second-generation`
+        },
+        {
+            'menuItem': "Breathtaking Visuals", 
+            'pict': "rdh2.png", 
+            'firstP': `A pixel- perfect experience starts with Radeon RX 7000 Series graphics cards and the new AMD Radiance Display™ Engine. Immerse yourself in your favorite visual vistas with stunning image clarity and up to 68 billion colors at up to 8K 165 Hz.`
+        },
+        {
+            'menuItem': "Enterprise Performance, Optimized", 
+            'pict': "epyc2.png", 
+            'firstP': `AMD EPYC 9005 processors deliver exceptional performance while enabling leadership energy efficiency and cost-of-ownership (TCO) value in support of key business imperatives.`
+        }
+        ];

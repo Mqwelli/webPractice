@@ -1,0 +1,13 @@
+extends template
+block nav
+	nav
+		nav__logo
+			img(src= require("./images/" + listImages[1]))
+		nav__buttons
+			+createMenuBuild(dictMenu,'Ryzen 7 9800X3D')
+block content
+	content_section
+		img.big(src= require("./images/" + listImages[7]))
+		p= structures[0].firstP
+block title
+	title=structures[0].menuItem
