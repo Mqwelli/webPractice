@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"> 
+</head>
+<body>
+	<div class="task">
+		<div class="input">
+			<form>
+				<p>
+					<label>Complex number 1:</label> 
+					<label id="i1">r</label> <input type="number" id="input1" min=0 max=200 onClick="reinput(this)">
+					<label id="i1">&phi;</label> <input type="number" id="input2" min=0 max=200 onClick="reinput(this)">
+				</p>
+				<p>
+					<label>Complex number 2:</label> 
+					<label id="i3">r</label> <input type="number" id="input3" min=0 max=200 onClick="reinput(this)">
+					<label id="i4">&phi;</label> <input type="number" id="input4" min=0 max=200 onClick="reinput(this)">
+				</p>
+				<p>
+					<img alt="complexForm" src="exp.png" id="cfImg">
+				</p>
+				<p>
+					Form:<br>
+					<label>
+						<input type="radio" id="task1" name="compF" checked>Exponential
+					</label>
+					<label>
+						<input type="radio" id="task2" name="compF">Polar
+					</label><br>
+					<label>
+						<input type="button" value="show" onClick="complexForm(this.form)">
+					</label>
+				</p>
+				
+				<div class="opsname">
+					Operations:<br>
+					<label>
+						<input type="checkbox" id="op1" onClick="resetOps(this.form)">Addition
+					</label>
+					<label>
+						<input type="checkbox" id="op2" onClick="resetOps(this.form)">Substraction
+					</label>
+					<label>
+						<input type="checkbox" id="op3" onClick="resetOps(this.form)">Multiplication
+					</label>
+					<label>
+						<input type="checkbox" id="op4" onClick="resetOps(this.form)">Division
+					</label><br>
+					<input type="button" value="Calculate" onClick="complexNum(this.form)">
+					<input type="button" value="Clear" onClick="clearNum(this.form)">
+				</div>
+			</form>
+		</div>
+		<div id="output">
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="program.js"></script>
+<style>
+	div {
+		text-align: center;
+	}
+	img {
+		height: 50px;
+	}
+</style>
+</html>
