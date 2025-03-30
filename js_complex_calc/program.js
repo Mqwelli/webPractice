@@ -142,7 +142,12 @@ function clearNum(data) {
 	data.input2.value = null;
 	data.input3.value = null;
 	data.input4.value = null;
-}
+	data.op1.checked = false;
+	data.op2.checked = false;
+	data.op3.checked = false;
+	data.op4.checked = false;
+	output.innerHTML = "";
+	}
 function complexForm(data) {
 	if (data.task1.checked) {
 		data.cfImg.src = "exp.png";
