@@ -1,0 +1,14 @@
+img {
+	border-color: red;
+}
+p {
+	color: black;
+}
+#list {
+	th {
+		background-color: Silver;
+	}
+	td {
+		background-color: LightGray;
+	}
+}

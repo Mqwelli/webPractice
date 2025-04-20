@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"> 
+<title>
+Solutions List
+</title>
+<link rel="stylesheet" href="CSS/style.css">
+<script src="JavaScript/data.js"></script>
+<script src="JavaScript/main.js"></script>
+<script src="JavaScript/table.js"></script>
+<script src="JavaScript/filter.js"></script>
+<script src="JavaScript/sort.js"></script>
+</head>
+<body>
+    <p>
+        <a href="main.html" target="_self">
+            Main Page
+        </a>
+    </p>
+    <p>
+        <a href="list.html" target="_self">
+            Solutions
+        </a>
+    </p>
+    <hr>
+	<form id="filter">
+  <p>
+    <label for="name">Name:</label>
+    <input type="text" id="name">
+  </p>
+  <p>
+    <label for="architecture">Architecture:</label>
+    <input type="text" id="architecture">
+  </p>
+  <p>
+    <label for="yearFrom">Year:</label>
+    from <input type="number" id="yearFrom"> 
+    to <input type="number" id="yearTo">
+  </p>
+  <p>
+    <label for="coreFrom">Cores:</label>
+    from <input type="number" id="coreFrom"> 
+    to <input type="number" id="coreTo">
+  </p>
+  <p>
+    <label for="threadsFrom">Threads:</label>
+    from <input type="number" id="threadsFrom"> 
+    to <input type="number" id="threadsTo">
+  </p>
+  <p>
+    <label for="baseFrom">Base frequency: </label>
+    from <input type="number" id="baseFrom"> 
+    to <input type="number" id="baseTo">
+  </p>
+  <p>
+    <label for="boostFrom">Boost frequency:</label>
+    from <input type="number" id="boostFrom"> 
+    to <input type="number" id="boostTo">
+  </p>
+  <input type="button" value="Find" onClick="filterTable(processors,'list', document.getElementById('filter'))">
+  <input type="button" value="Reset filter" onClick="clearFilter(processors,'list', document.getElementById('filter'))">
+  </form>
+  <form id="sort">
+    <p> Sort</p>
+    <p>
+      <select id="fieldsFirst" onChange="changeNextSelect('fieldsSecond',this)">
+      </select> 
+      descending? <input  type="checkbox"  id="fieldsFirstDesc">
+    </p>
+    <p> 
+      <select id="fieldsSecond" onChange="changeThirdSelect('fieldsThird',this)">
+      </select> 
+      descensding? <input  type="checkbox"  id="fieldsSecondDesc">
+    </p>
+	<p> 
+      <select id="fieldsThird">
+      </select> 
+      descensding? <input  type="checkbox"  id="fieldsThirdDesc">
+    </p>
+    <input type="button" value="Sort" onClick="sortTable('list',document.getElementById('sort'))"> 
+    <input type="button" value="Reset sort" onClick="clearSort('list',processors,'sort')">
+  </form> 
+<table id="list">
+</table>
+</body>
+</html>
