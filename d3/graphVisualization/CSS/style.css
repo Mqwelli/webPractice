@@ -1,0 +1,23 @@
+#list {
+	th {
+		background-color: LightGray;
+	}
+	tr:nth-child(odd) {
+		background-color: LightGray;
+	}
+	tr:nth-child(even) {
+		background-color: White;
+	}
+}
+svg {
+	width: 900px;
+	height: 550px;
+}
+svg path, line {
+	fill: none;
+	stroke: black;
+	width: 1px;
+}
+svg text {
+	font: 8px Verdana;
+}
