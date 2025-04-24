@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title> Трансформация и анимация</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="http://d3js.org/d3.v7.min.js"> </script>
+    <script src="JavaScript/main.js"></script>
+    <script src="JavaScript/image.js"></script>
+	<script src="JavaScript/path.js"></script>
+  </head>
+  <body>   
+<form id="setting">
+	<p>Масштаб<br>
+      <label for="sx">по x: </label>
+      <input type="number" id="sx" value="1" max="10" min="0">
+	  <label for="lsx">до: </label>
+      <input type="number" id="lsx" value="1" max="10" min="0"><br>
+      <label for="sy">по y: </label>
+      <input type="number" id="sy" value="1" max="10" min="0">
+	  <label for="lsy">до: </label>
+      <input type="number" id="lsy" value="1" max="10" min="0"><br>
+    </p>
+	<p>Поворот<br>
+      <label for="turn">угол: </label>
+      <input type="number" id="turn" value="180" max="360" min="0">
+	  <label for="lturn">до: </label>
+      <input type="number" id="lturn" value="180" max="360" min="0"><br>
+    </p>
+	<p>Скорость<br>
+		<label for="speed">множитель: </label>
+		<input type="number" id="speed" value="1" max="4" min="0.25">
+    </p>
+	<p>Тип анимации<br>
+	  <select id="animSelector">
+		<option value="linear">Linear</option>
+		<option value="elastic">Elastic</option>
+		<option value="bounce">Bounce</option>
+	  </select>
+	 </p>
+	  <input type="button" id="animateB" value="Анимировать" onClick="runAnimation(setting)">
+	  <input type="button" value="Очистить" onClick="clearForm()">
+  </form>
+    <svg id="main"></svg>
+
+  </body>
+</html>
