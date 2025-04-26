@@ -107,53 +107,36 @@ function createChart(svg, data, scaleX, scaleY, attr_area, color,desc) {
 		.style("fill", color)
 	}
 	else {
+		//histogram
 		const r = 4;
-		svg.selectAll(".dot")
-		.data(data)
-		.enter()
-		.append("rect")
-		
-		.attr("x", d => scaleX(d.labelX) + scaleX.bandwidth() / 2)
-		.attr("y", d => scaleY(d.values[+desc])) // 0 - min, 1 - max
-		.attr("width",10)
-		.attr("height",100)
-		.attr("transform", `translate(${attr_area.marginX},
-		${attr_area.marginY})`)
-		.style("fill", color)
+		const graphHeight = d3.select("g").attr("transform").split("\t\t")[1].substring(0,3);
+		if (desc || !document.getElementById("hval1").checked) {
+			svg.selectAll(".dot")
+			.data(data)
+			.enter()
+			.append("rect")
+			
+			.attr("x", d => scaleX(d.labelX) + scaleX.bandwidth() / 2)
+			.attr("y", d => scaleY(d.values[+desc])) // 0 - min, 1 - max
+			.attr("width",10)
+			.attr("height",d => graphHeight - 50 - scaleY(d.values[+desc]))
+			.attr("transform", `translate(${attr_area.marginX},
+			${attr_area.marginY})`)
+			.style("fill", color)
+		}
+		else if (!desc) {
+			svg.selectAll(".dot")
+			.data(data)
+			.enter()
+			.append("rect")
+			
+			.attr("x", d => scaleX(d.labelX) + scaleX.bandwidth() / 2 - 10)
+			.attr("y", d => scaleY(d.values[+desc])) // 0 - min, 1 - max
+			.attr("width",10)
+			.attr("height",d => graphHeight - 50 - scaleY(d.values[+desc]))
+			.attr("transform", `translate(${attr_area.marginX},
+			${attr_area.marginY})`)
+			.style("fill", color)
+		}
 	}
 }
-//.attr("width","${attr_area.width}")
-//		.attr("height","${attr_area.height}")
-//		.attr("transform", `translate(${attr_are
-///////////////////////////// UNFINISHED
-// function createArrGraph(data, key, reversed) { // key - страна/год
-	// let groupObj;
-	// if (key == "Страна") {
-		// if (reversed) {
-			// arrCopy = data.reverse();
-			// let temp = d3.group(data, d => d[key]);
-			// groupObj = new Map([...temp.entries()].sort((a, b) => b[1] - a[1]));
-		// }
-		// else {
-			// groupObj = d3.group(data, d => d[key]);
-		// }
-	// }
-	// else {
-		// if (reversed) {
-			// arrCopy = data.reverse();
-			// let temp = d3.group(data, d => d[key]);
-			// groupObj = new Map([...temp.entries()].sort());
-		// }
-		// else {
-			// let temp = d3.group(data, d => d[key]);
-			// groupObj = new Map([...temp.entries()].sort()); 
-		// }
-	// }
-	// let arrGraph =[];
-	// for(let entry of groupObj) {
-		// let minMax = d3.extent(entry[1].map(d => d['Высота']));
-		// arrGraph.push({labelX : entry[0], values : minMax});
-	// }
-	// return arrGraph;
-
-// }
