@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Визуализация данных</title>
+<link rel="stylesheet" href="CSS/style.css">
+<script src="http://d3js.org/d3.v7.min.js"> </script>
+<script src="JavaScript/data.js"></script>
+<script src="JavaScript/main.js"></script>
+<script src="JavaScript/table.js"></script>
+<script src="JavaScript/chart.js"></script>
+<script src="JavaScript/filter.js"></script>
+<script src="JavaScript/sort.js"></script>
+</head>
+<body>
+<p>
+        <a href="main.html" target="_self">
+            Main Page
+        </a>
+    </p>
+    <p>
+        <a href="list.html" target="_self">
+            Solutions
+        </a>
+    </p>
+    <hr>
+	<details>
+	<summary>Filter</summary>
+	<form id="filter">
+  <p>
+    <label for="name">Name:</label>
+    <input type="text" id="name">
+  </p>
+  <p>
+    <label for="architecture">Architecture:</label>
+    <input type="text" id="architecture">
+  </p>
+  <p>
+    <label for="yearFrom">Year:</label>
+    from <input type="number" id="yearFrom"> 
+    to <input type="number" id="yearTo">
+  </p>
+  <p>
+    <label for="coreFrom">Cores:</label>
+    from <input type="number" id="coreFrom"> 
+    to <input type="number" id="coreTo">
+  </p>
+  <p>
+    <label for="threadsFrom">Threads:</label>
+    from <input type="number" id="threadsFrom"> 
+    to <input type="number" id="threadsTo">
+  </p>
+  <p>
+    <label for="baseFrom">Base frequency: </label>
+    from <input type="number" id="baseFrom"> 
+    to <input type="number" id="baseTo">
+  </p>
+  <p>
+    <label for="boostFrom">Boost frequency:</label>
+    from <input type="number" id="boostFrom"> 
+    to <input type="number" id="boostTo">
+  </p>
+  <input type="button" value="Find" onClick="filterTable(processors,'list', document.getElementById('filter'))">
+  <input type="button" value="Reset filter" onClick="clearFilter(processors,'list', document.getElementById('filter'))">
+  </form>
+  </details>
+  <details>
+  <summary>Sort</summary>
+  <form id="sort">
+    <p>
+      <select id="fieldsFirst" onChange="changeNextSelect('fieldsSecond',this)">
+      </select> 
+      descending? <input  type="checkbox"  id="fieldsFirstDesc">
+    </p>
+    <p> 
+      <select id="fieldsSecond" onChange="changeThirdSelect('fieldsThird',this,'fieldsFirst')">
+      </select> 
+      descensding? <input  type="checkbox"  id="fieldsSecondDesc">
+    </p>
+	<p> 
+      <select id="fieldsThird">
+      </select> 
+      descensding? <input  type="checkbox"  id="fieldsThirdDesc">
+    </p>
+    <input type="button" value="Sort" onClick="sortTable('list',document.getElementById('sort'))"> 
+    <input type="button" value="Reset sort" onClick="clearSort('list',processors,'sort')">
+  </form> 
+  </details>
+  <details>
+  <summary>Graph</summary>
+	<table border="0">
+	<tr align="center">
+	<td><b>Значение по оси OX</b></td>
+	<td><b>Результат</b></td>
+	</tr>
+	<tr>
+	<td>
+		<form>
+		<input type="radio" id="xval1" name="Xvalue" value="arch" checked>Архитектура<br>
+		<input type="radio" id="xval2" name="Xvalue" value="year">Год
+		</form>
+	</td>
+	<td>
+		<form>
+		<input type="checkbox" id="hval1" name="result" value="minfreq" checked>Максимальная базовая частота<br>
+		<input type="checkbox" id="hval2" name="result" value="maxfreq">Минимальная базовая частота<br>
+		</form>
+	</td>
+	</tr>
+	</table>
+	<p>Тип графика:
+	  <select id="graphSelector">
+		<option value="dot">Точечная</option>
+		<option value="gisto">Гистограмма</option>
+	  </select>
+	  <br>
+	  <input type="button" id="buildGraph" value="Построить" onClick="drawGraph('list')">
+	 </p>
+  <svg id="graph"></svg>
+  </details>
+  <br>
+	
+  <input type="button" id="showTable" value="Скрыть таблицу" onClick="visibility()">
+<table id="list">
+</table>
+</body>
+</html>
