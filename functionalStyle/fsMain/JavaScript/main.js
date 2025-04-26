@@ -40,21 +40,26 @@ let changeNextSelect = (nextSelectId, curSelect) => {
     let nextSelect = document.getElementById(nextSelectId);
     nextSelect.disabled = false;
     nextSelect.innerHTML = curSelect.innerHTML;
-	console.log (curSelect.value);
     if (curSelect.value != 0) {
        nextSelect.remove(curSelect.value);
     } else {
         nextSelect.disabled = true;
     }
 }
-let changeThirdSelect = (nextSelectId, curSelect) => {
+let changeThirdSelect = (nextSelectId, curSelect, firstValue) => {
     let nextSelect = document.getElementById(nextSelectId);
+	let firstSelect = document.getElementById(firstValue);
     nextSelect.disabled = false;
     nextSelect.innerHTML = curSelect.innerHTML;
-	console.log (curSelect.value);
     if (curSelect.value != 0) {
-       nextSelect.remove(curSelect.value - 1);
-    } else {
+		if (firstSelect.value - curSelect.value !=  1) {
+			nextSelect.remove(curSelect.value - 1);
+		}
+		else {
+			nextSelect.remove(curSelect.value);
+		}
+    } 
+	else  {
         nextSelect.disabled = true;
     }
 }
