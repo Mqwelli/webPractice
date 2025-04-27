@@ -108,7 +108,8 @@ function createAxis(svg, data, attr_area, desc){
 }
 //точечная диаграмма
 function createChart(svg, data, scaleX, scaleY, attr_area, color,desc) {
-	if (document.getElementById("graphSelector").value == "dot") {
+	let graphType = document.getElementById("graphSelector").value;
+	if (graphType == "dot") {
 		const r = 4;
 		svg.selectAll(".dot")
 		.data(data)
@@ -121,7 +122,7 @@ function createChart(svg, data, scaleX, scaleY, attr_area, color,desc) {
 		${attr_area.marginY})`)
 		.style("fill", color)
 	}
-	else {
+	else if (graphType == "gisto"){
 		//histogram
 		const r = 4;
 		const graphHeight = d3.select("g").attr("transform").split("\t\t")[1].substring(0,3);
@@ -152,6 +153,43 @@ function createChart(svg, data, scaleX, scaleY, attr_area, color,desc) {
 			.attr("transform", `translate(${attr_area.marginX},
 			${attr_area.marginY})`)
 			.style("fill", color)
+			
 		}
 	}
+	else if (graphType == "lineGraph"){
+		let line = d3.line()
+				.x(d => d.x)
+				.y(d => d.y);
+		let lineData = svg.selectAll(".dot")
+			.data(data)
+			.enter();
+			lineData = Object.values(lineData)[0][0];
+		let linePoints = [];
+		for (let i in lineData) {
+			let ldElem = {};
+			let curLX = lineData[i].__data__.labelX;
+			ldElem.x = scaleX(curLX) + scaleX.bandwidth() / 2;
+			ldElem.y = scaleY(lineData[i].__data__.values[+desc]);
+			linePoints.push(ldElem);
+		}
+		const r = 4;
+		svg.selectAll(".dot")
+			.data(data)
+			.enter()
+			.append("path")
+			.attr("d", line(linePoints))
+			.attr("transform", `translate(${attr_area.marginX},
+			${attr_area.marginY})`)
+			.style("stroke",color);
+		svg.selectAll(".dot")
+			.data(data)
+			.enter()
+			.append("circle")
+			.attr("r", r)
+			.attr("cx", linePoints[0].x)
+			.attr("cy", linePoints[0].y)
+			.attr("transform", `translate(${attr_area.marginX},
+					${attr_area.marginY})`)
+			.style("fill", color);
+	} 
 }
