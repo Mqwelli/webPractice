@@ -58,8 +58,3 @@ let filterTable = (data, idTable, dataForm) => {
 	clearTable(idTable);
     createTable(tableFilter, idTable);  
 }
-let clearFilter = (data, idTable, dataForm) => {
-	dataForm.reset();
-	clearTable(idTable);
-	createTable(data,idTable);
-};

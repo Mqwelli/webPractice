@@ -40,10 +40,11 @@ let changeNextSelect = (nextSelectId, curSelect) => {
     let nextSelect = document.getElementById(nextSelectId);
     nextSelect.disabled = false;
     nextSelect.innerHTML = curSelect.innerHTML;
-    if (curSelect.value != 0) {
+    if (curSelect.value != 0 && isFinite(curSelect.value)) {
        nextSelect.remove(curSelect.value);
     } else {
         nextSelect.disabled = true;
+		changeThirdSelect('fieldsThird',document.getElementById('fieldsSecond'),'fieldsFirst');
     }
 }
 let changeThirdSelect = (nextSelectId, curSelect, firstValue) => {
@@ -51,7 +52,7 @@ let changeThirdSelect = (nextSelectId, curSelect, firstValue) => {
 	let firstSelect = document.getElementById(firstValue);
     nextSelect.disabled = false;
     nextSelect.innerHTML = curSelect.innerHTML;
-    if (curSelect.value != 0) {
+    if (curSelect.value != 0 && isFinite(curSelect.value)) {
 		if (firstSelect.value - curSelect.value !=  1) {
 			nextSelect.remove(curSelect.value - 1);
 		}

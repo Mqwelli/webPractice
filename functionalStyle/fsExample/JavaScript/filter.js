@@ -91,8 +91,3 @@ let filterTable = (data, idTable, dataForm) => {
     // показать на странице таблицу с отфильтрованными строками
     createTable(tableFilter, idTable);  
 }
-let clearFilter = (data, idTable, dataForm) => {
-	dataForm.reset();
-	clearTable(idTable);
-	createTable(data,idTable);
-};

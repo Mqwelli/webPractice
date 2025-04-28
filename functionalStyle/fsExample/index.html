@@ -39,7 +39,7 @@
     до <input type="number" id="heightTo">
   </p>
   <input type="button" value="Найти" onClick="filterTable(buildings,'list', document.getElementById('filter'))">
-  <input type="button" value="Очистить фильтры" onClick="clearFilter(buildings,'list', document.getElementById('filter'))">
+  <input type="button" value="Очистить фильтры" onClick="clearSortAndFilters('list',buildings,'sort')">
   </form>
   <form id="sort">
     <p> Сортировать по</p>
@@ -54,7 +54,7 @@
       по убыванию? <input  type="checkbox"  id="fieldsSecondDesc">
     </p>
     <input type="button" value="Сортировать" onClick="sortTable('list',document.getElementById('sort'))"> 
-    <input type="button" value="Сбросить сортировку" onClick="clearSort('list',buildings,'sort')">
+    <input type="button" value="Сбросить сортировку" onClick="clearSortAndFilters('list',buildings,'sort')">
   </form> 
 <table id="list">
 </table>

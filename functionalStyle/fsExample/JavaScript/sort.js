@@ -72,20 +72,11 @@ let sortTable = (idTable, data) => {
 	table.appendChild(headRow);
 	rowData.forEach (row => table.appendChild(row));
 }
-let clearSort = (idTable, data, idSort) => {
+let clearSortAndFilters = (idTable, data, idSort) => {
 	let sort = document.getElementById(idSort);
-	let selectList = document.getElementsByTagName('select');
-	for (let i = 0; i < selectList.length; i++) {
-		selectList[i].value = 0;
-	}
-	let checkOne = document.getElementById('fieldsFirstDesc');
-	if (checkOne.checked == true) {
-		checkOne.checked = false;
-	}
-	let checkTwo = document.getElementById('fieldsSecondDesc');
-	if (checkTwo.checked == true) {
-		checkTwo.checked = false;
-	}
+	sort.reset();	
+	let filter = document.getElementById("filter");
+	filter.reset();
 	clearTable(idTable);
 	createTable(data,idTable);
 }
