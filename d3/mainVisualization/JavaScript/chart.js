@@ -165,37 +165,23 @@ function createChart(svg, data, scaleX, scaleY, attr_area, color,desc) {
 		}
 	}
 	else if (graphType == "lineGraph"){
-		let line = d3.line()
-				.x(d => d.x)
-				.y(d => d.y);
-		let lineData = svg.selectAll(".dot")
-			.data(data)
-			.enter();
-			lineData = Object.values(lineData)[0][0];
-		let linePoints = [];
-		for (let i in lineData) {
-			let ldElem = {};
-			let curLX = lineData[i].__data__.labelX;
-			ldElem.x = scaleX(curLX) + scaleX.bandwidth() / 2;
-			ldElem.y = scaleY(lineData[i].__data__.values[+desc]);
-			linePoints.push(ldElem);
-		}
 		const r = 4;
-		svg.selectAll(".dot")
-			.data(data)
-			.enter()
-			.append("path")
-			.attr("d", line(linePoints))
-			.attr("transform", `translate(${attr_area.marginX},
-			${attr_area.marginY})`)
+		let lineF = d3.line()
+				.x(d => scaleX(d.labelX) + scaleX.bandwidth() / 2)
+				.y(d => scaleY(d.values[+desc]));
+		chart = svg.append("path")
+			.datum(data)
+			.attr("d",lineF)
+			.attr("transform",`translate(${attr_area.marginX},${attr_area.marginY})`)
+			.style("stroke-width","2")
 			.style("stroke",color);
 		svg.selectAll(".dot")
 			.data(data)
 			.enter()
 			.append("circle")
 			.attr("r", r)
-			.attr("cx", linePoints[0].x)
-			.attr("cy", linePoints[0].y)
+			.attr("cx", d => scaleX(d.labelX) + scaleX.bandwidth() / 2)
+		.attr("cy", d => scaleY(d.values[+desc])) // 0 - min, 1 - max
 			.attr("transform", `translate(${attr_area.marginX},
 					${attr_area.marginY})`)
 			.style("fill", color);
