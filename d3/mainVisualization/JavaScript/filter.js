@@ -56,7 +56,6 @@ let filterTable = (data, idTable, dataForm) => {
     });     
 	clearTable(idTable);
     createTable(tableFilter, idTable);  
-	console.log(document.getElementById(idTable));
 }
 let clearFilter = (data, idTable, dataForm) => {
 	dataForm.reset();

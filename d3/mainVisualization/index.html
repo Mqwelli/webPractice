@@ -61,7 +61,7 @@
     to <input type="number" id="boostTo">
   </p>
   <input type="button" value="Find" onClick="filterTable(processors,'list', document.getElementById('filter'))">
-  <input type="button" value="Reset filter" onClick="clearFilter(processors,'list', document.getElementById('filter'))">
+  <input type="button" value="Reset filter" onClick="clearSortAndFilters('list',processors,'sort')">
   </form>
   </details>
   <details>
@@ -83,7 +83,7 @@
       descensding? <input  type="checkbox"  id="fieldsThirdDesc">
     </p>
     <input type="button" value="Sort" onClick="sortTable('list',document.getElementById('sort'))"> 
-    <input type="button" value="Reset sort" onClick="clearSort('list',processors,'sort')">
+    <input type="button" value="Reset sort" onClick="clearSortAndFilters('list',processors,'sort')">
   </form> 
   </details>
   <details>
@@ -102,8 +102,8 @@
 	</td>
 	<td>
 		<form>
-		<input type="checkbox" id="hval1" name="result" value="minfreq" checked>Максимальная базовая частота<br>
-		<input type="checkbox" id="hval2" name="result" value="maxfreq">Минимальная базовая частота<br>
+		<input type="checkbox" id="hval1" name="result" value="minfreq" onClick="resetOps()" checked>Максимальная базовая частота<br>
+		<input type="checkbox" id="hval2" name="result" value="maxfreq" onClick="resetOps()">Минимальная базовая частота<br>
 		</form>
 	</td>
 	</tr>

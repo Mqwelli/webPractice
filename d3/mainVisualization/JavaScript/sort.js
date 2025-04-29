@@ -44,24 +44,11 @@ let sortTable = (idTable, data) => {
 	table.appendChild(headRow);
 	rowData.forEach (row => table.appendChild(row));
 }
-let clearSort = (idTable, data, idSort) => {
+let clearSortAndFilters = (idTable, data, idSort) => {
 	let sort = document.getElementById(idSort);
-	let selectList = document.getElementsByTagName('select');
-	for (let i = 0; i < selectList.length; i++) {
-		selectList[i].value = 0;
-	}
-	let checkOne = document.getElementById('fieldsFirstDesc');
-	if (checkOne.checked == true) {
-		checkOne.checked = false;
-	}
-	let checkTwo = document.getElementById('fieldsSecondDesc');
-	if (checkTwo.checked == true) {
-		checkTwo.checked = false;
-	}
-	let checkThree = document.getElementById('fieldsThirdDesc');
-	if (checkThree.checked == true) {
-		checkThree.checked = false;
-	}
+	let filter = document.getElementById("filter");
+	sort.reset();
+	filter.reset();
 	clearTable(idTable);
 	createTable(data,idTable);
 }

@@ -1,9 +1,9 @@
 #list {
 	th {
-		background-color: LightGray;
+		background-color: Red;
 	}
 	tr:nth-child(odd) {
-		background-color: LightGray;
+		background-color: Gray;
 	}
 	tr:nth-child(even) {
 		background-color: White;
