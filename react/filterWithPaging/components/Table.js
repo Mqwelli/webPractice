@@ -23,8 +23,9 @@ const Table = (props) => {
      //формируем совокупность span с номерами страниц
 	 if (props.pagina === 'true') {
 		const pages = arr.map((item, index) =>  
-			  <span className = {item === curPg ? "pgSelected" : "pg"} key={ index } onClick={ changeActive }> { item } </span>
+			  <span className = {item == curPg ? "pgSelected" : "pg"} key={ index } onClick={ changeActive }> { item } </span>
 		);
+		console.log(curPg);
 		return( 
 		  <>
 		  <h4>Фильтры</h4>
