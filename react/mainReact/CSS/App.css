@@ -1,0 +1,18 @@
+td, th {
+	border-color: black;
+	border: solid thin;
+	padding: 5px;
+}
+.hide {
+	display: none;
+}
+.show {
+	display: tbody;
+}
+.numPg span:hover, .pgSelected {
+	color: blue;
+	font-weight: bold;
+}
+.pg, .pgSelected {
+	margin-right: 10px;
+}
