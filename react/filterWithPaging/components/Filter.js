@@ -46,7 +46,7 @@ const Filter = (props) => {
           <input name="structure" type="text" />
         </p>  
         <p>
-          <label>Type:</label>		
+          <label>Тип:</label>		
           <input name="type" type="text" />
         </p>
 		<p>

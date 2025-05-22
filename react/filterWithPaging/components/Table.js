@@ -25,7 +25,6 @@ const Table = (props) => {
 		const pages = arr.map((item, index) =>  
 			  <span className = {item == curPg ? "pgSelected" : "pg"} key={ index } onClick={ changeActive }> { item } </span>
 		);
-		console.log(curPg);
 		return( 
 		  <>
 		  <h4>Фильтры</h4>
@@ -36,7 +35,7 @@ const Table = (props) => {
 				<TableBody body={ dataTable } amountRows={ props.amountRows } numPage={activePage} pagi={props.pagina}/>
 			</table>
 
-			<div className="numPg">
+			<div className={arr.length > 1 ? "numPg" : "hide"}>
 			  {pages}
 			</div>
 		  </>   
