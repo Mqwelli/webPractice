@@ -2,7 +2,7 @@ import TableHead from './TableHead.js';
 import TableBody from './TableBody.js';
 import {useState} from "react";
 import Filter from './Filter.js';
-//import Sort from './Sort.js';
+import Sort from './Sort.js';
 /*
 компонент, выводящий на страницу таблицу
 пропсы:
@@ -10,7 +10,11 @@ data - данные для таблицы в виде массива объек�
 */
 const Table = (props) => {
 	const [dataTable, setDataTable] = useState(props.data);
-    const updateDataTable = (value) => setDataTable(value);
+	const [dataFilter, setDataFilter] = useState(props.data);
+	const updateFilter = (value) => {
+		setDataTable(value);
+		setDataFilter(value);
+	}
 	//количество страниц разбиения таблицы
     const n = Math.ceil(dataTable.length / props.amountRows); 
     const [activePage, setActivePage] = useState("1");
@@ -26,18 +30,17 @@ const Table = (props) => {
 		const pages = arr.map((item, index) =>  
 			  <span className = {item == curPg ? "pgSelected" : "pg"} key={ index } onClick={ changeActive }> { item } </span>
 		);
-		console.log(props.data);
 		return( 
 		  <>
-		  <h4>Фильтры</h4>
-          <Filter filtering={ updateDataTable } data={ dataTable } fullData={ props.data }/>
-		  
+		  <h4>Filters</h4>
+          <Filter filtering={ updateFilter } fullData={ dataTable } origData={props.data}/>
+		  <Sort sorting={setDataTable} fullData={dataTable} origData={dataFilter}/>
 			<table>
 				<TableHead head={ Object.keys(props.data[0]) } />
 				<TableBody body={ dataTable } amountRows={ props.amountRows } numPage={activePage} pagi={props.pagina}/>
 			</table>
 
-			<div className="numPg">
+			<div className={arr.length > 1 ? "numPg" : "hide"}>
 			  {pages}
 			</div>
 		  </>   
@@ -47,8 +50,9 @@ const Table = (props) => {
 		 
 		 return( 
 		  <>
-		  <h4>Фильтры</h4>
-          <Filter filtering={ updateDataTable } data={ dataTable } fullData={ props.data }/>
+		  <h4>Filters</h4>
+          <Filter filtering={ updateFilter } fullData={ dataTable } origData={props.data}/>
+		  <Sort sorting={setDataTable} fullData={dataTable} origData={dataFilter}/>
 			<table>
 				<TableHead head={ Object.keys(props.data[0]) } />
 				<TableBody body={ dataTable } amountRows={ props.amountRows } numPage={curPg} pagi={props.pagina}/>

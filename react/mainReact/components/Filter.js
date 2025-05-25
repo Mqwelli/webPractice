@@ -1,7 +1,6 @@
 /*
    компонент, для фильтрации таблицы
 */
-
 const Filter = (props) => {
 	 const handleSubmit= (event) => {    
         event.preventDefault();		
@@ -37,7 +36,7 @@ const Filter = (props) => {
         props.filtering(arr);
 	}
 	const handleReset= (event) => {
-		props.filtering(props.fullData);
+		props.filtering(props.origData);
 	}
 	
     return (
