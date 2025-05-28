@@ -1,0 +1,35 @@
+td, th {
+	border-color: black;
+	border: solid thin;
+	padding: 5px;
+}
+.hide {
+	display: none;
+}
+.show {
+	display: tbody;
+}
+.numPg span:hover, .pgSelected {
+	color: blue;
+	font-weight: bold;
+}
+.pg, .pgSelected {
+	margin-right: 10px;
+}
+svg {
+    width: 1000px;
+    height: 400px;
+}
+
+svg path, line {
+    fill: none;
+    stroke: black;
+    width: 1px;
+}
+ 
+svg text {
+    font: 8px Verdana;
+}
+.error {
+	background-color: red;
+}
