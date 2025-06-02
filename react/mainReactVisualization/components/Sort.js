@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 const Sort = (props) => {
 	const options = [
 	{value: '1', text: 'None'},
@@ -32,6 +32,7 @@ const handleReset = () => {
 		);
 		setDesc([false,false,false]);
 		props.sorting(props.origData);
+		console.log(props.formRef.current);
 }
 	const isUsed = (curOption,curSelect) => {
 		if (curOption == "None") return false;
@@ -91,7 +92,7 @@ let handleDesc = (val) => {
 }
 // sort 
 const handleSubmit = (event) => {
-	event.preventDefault();		
+	event.preventDefault();	
     let sortArr = createSortArr(props.fullData);
     if (sortArr.length === 0) {
         props.sorting(props.fullData);
@@ -120,7 +121,7 @@ const handleSubmit = (event) => {
 }
 return (
 	<div>
-	  <form onSubmit={handleSubmit} onReset={handleReset}>
+	  <form onSubmit={handleSubmit} onReset={handleReset} ref={props.formRef}>
 		<p>
 		  <select name="fieldsFirst" value={selected.first} onChange={a => handleSelect(a,'first')}>
 			  {options.map((opt) => (

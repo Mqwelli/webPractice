@@ -1,6 +1,6 @@
 import TableHead from './TableHead.js';
 import TableBody from './TableBody.js';
-import {useState, useEffect} from "react";
+import {useState, useEffect, useRef} from "react";
 import Filter from './Filter.js';
 import Sort from './Sort.js';
 /*
@@ -15,6 +15,10 @@ const Table = (props) => {
 		setDataTable(value);
 		setDataFilter(value);
 		
+	}
+	const formRef = useRef(null);
+	let handleRef = () => {
+		formRef.current.reset();
 	}
 	useEffect(() => {
 			props.dataChange(dataTable);
@@ -37,8 +41,8 @@ const Table = (props) => {
 		return( 
 		  <>
 		  <h4>Filters</h4>
-          <Filter filtering={ updateFilter } fullData={ dataTable } origData={props.data}/>
-		  <Sort sorting={setDataTable} fullData={dataTable} origData={dataFilter}/>
+          <Filter filtering={ updateFilter } fullData={ dataTable } origData={props.data} sortRes={handleRef}/>
+		  <Sort sorting={setDataTable} fullData={dataTable} origData={dataFilter} formRef={formRef}/>
 			<table>
 				<TableHead head={ Object.keys(props.data[0]) } />
 				<TableBody body={ dataTable } amountRows={ props.amountRows } numPage={activePage} pagi={props.pagina}/>
@@ -55,8 +59,8 @@ const Table = (props) => {
 		 return( 
 		  <>
 		  <h4>Filters</h4>
-          <Filter filtering={ updateFilter } fullData={ dataTable } origData={props.data}/>
-		  <Sort sorting={setDataTable} fullData={dataTable} origData={dataFilter}/>
+          <Filter filtering={ updateFilter } fullData={ dataTable } origData={props.data} sortRes={handleRef}/>
+		  <Sort sorting={setDataTable} fullData={dataTable} origData={dataFilter} formRef={formRef}/>
 			<table>
 				<TableHead head={ Object.keys(props.data[0]) } />
 				<TableBody body={ dataTable } amountRows={ props.amountRows } numPage={curPg} pagi={props.pagina}/>

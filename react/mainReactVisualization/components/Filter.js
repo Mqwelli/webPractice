@@ -37,6 +37,7 @@ const Filter = (props) => {
 	}
 	const handleReset= (event) => {
 		props.filtering(props.origData);
+		props.sortRes();
 	}
 	
     return (

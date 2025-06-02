@@ -59,6 +59,7 @@ const ChartDraw = (props) => {
 				.attr("dy", ".15em")
 				.attr("transform", d => "rotate(-30)");
 			const yAxis = d3.axisLeft(scaleY);
+			let step = props.oyType[0] && props.oyType[1] ? 4 : 0;
 			svg .append("g")
 				.attr("transform", `translate(${margin.left}, ${margin.top})`)
 				.call(yAxis);
@@ -82,7 +83,7 @@ const ChartDraw = (props) => {
 						.enter()
 						.append("circle")
 						.attr("r", 5)
-						.attr("cx", d => scaleX(d.labelX) + scaleX.bandwidth() / 2)
+						.attr("cx", d => scaleX(d.labelX) + scaleX.bandwidth() / 2 + step)
 						.attr("cy", d => scaleY(d.values[0] ) )
 						.attr("transform", `translate(${margin.left}, ${margin.top})`)
 						.style("fill", "blue")
