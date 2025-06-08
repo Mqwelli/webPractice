@@ -12,8 +12,8 @@ function SolutionsGrid() {
 		{ field: 'Year', flex: 0.5},
 		{ field: 'Cores', flex: 0.5},
 		{ field: 'Threads' },
-		{ field: 'BaseFreq',headerName: 'Base frequency'},
-		{ field: 'BoostFreq',headerName: 'Boost frequency'},
+		{ field: 'Base frequency'},
+		{ field: 'Boost frequency'},
 	];
 	
 	return (

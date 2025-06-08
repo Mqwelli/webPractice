@@ -14,11 +14,11 @@ function Gallery() {
 		<Box sx={{height: 385, overflowY: 'auto', m: '20px auto'}}>
 			<ImageList variant="woven" 
 			sx={{
-				columnCount: {
-					xs: '1 !important',
-					sm: '2 !important',
-					md: '3 !important',
-					lg: '3 !important',
+				gridTemplateColumns: {
+					xs: 'repeat(1,1fr) !important',
+					sm: 'repeat(2,1fr) !important',
+					md: 'repeat(2,1fr) !important',
+					lg: 'repeat(2,1fr) !important',
 					},
 					textAlign: 'center',
 				}}

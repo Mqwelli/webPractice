@@ -21,7 +21,7 @@ function Product() {
 				<Box sx={{ display: 'flex', flexDirection: 'row', height: '100%', alignItems: 'center'}}>
 				<Link to="/" style={{textDecoration: 'none'}}>
 				<Typography color="error" fontWeight='bold' gutterBottom variant="subtitle1" sx={{margin: '20px 0px 20px 0px'}}>
-					MAIN PAGE {'>'}
+					PRODUCTS {'>'}
 				</Typography>
 				</Link>
 				<Typography sx={{margin: '20px 20px 20px 0px'}}>
